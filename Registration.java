@@ -4,26 +4,27 @@ import java.util.Scanner;
 import java.util.regex.Pattern;
 
 @FunctionalInterface
-	interface LastName {
-	public abstract void validate_LastName();
-	}
+interface Emailid {
+public abstract void validate_email();
+}
+public class RegistrationUC3 {
 
-	public class RegistrationUC2 {
-	public static void main(String[] args){
-	Scanner scn = new Scanner(System.in);
-	LastName myLamda = () -> {
-	String Regex = "^[A-Z]{1}[a-zA-Z]{2,25}$";
-	System.out.println("Enter a Last name:");
-	String LastName = scn.next();
-	Pattern pt =Pattern.compile(Regex);
-	if (Pattern.matches(Regex, LastName)) {
-	System.out.println("valid LastName");
-	} else {
-	System.out.println("Invalid LastName");
-	}
-	};
-	myLamda.validate_LastName();
-	}
-	}
-
+	public static void main(String[] args) {
+		
+		Scanner scn = new Scanner(System.in);
+		Emailid myLamda = () -> {
+		
+		String Regex = "^[a-z]{3,15}[.][a-z]{3,15}+[@][a-z]{5,10}[.][a-z]{2}[.][a-z]{2}$";
+		System.out.println("Enter a email id:");
+		String Emailid = scn.next();
+		Pattern pt =Pattern.compile(Regex);
+		if (Pattern.matches(Regex, Emailid)) {
+		System.out.println("valid emailid");
+		} else {
+		System.out.println("Invalid emailid");
+		}
+		};
+		myLamda.validate_email();
+		}
+		}
 
