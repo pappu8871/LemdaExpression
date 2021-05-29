@@ -2,28 +2,29 @@ package com.registration;
 
 import java.util.Scanner;
 import java.util.regex.Pattern;
+
 @FunctionalInterface
-interface Password3 {
-
-public abstract	void validate_pass();
-
+interface Password4 {
+public abstract	void validate_Pass();
 }
-public class RegistrationUC8 {
+
+public class RegistrationUC9 {
+	
 public static void main(String[] args) {
 		
 		Scanner scn = new Scanner(System.in);
-		Password3 myLamda = () -> {
-			
-			String Regex = "^[a-zA-Z0-9@#$%^&+=_-]{8,25}$";
-			System.out.println("Enter Your Password:");
-			String password = scn.next();
-			Pattern pt =Pattern.compile(Regex);
-			if (pt.matches(Regex, password)) {
-				System.out.println("valid Password");
-			} else {
-				System.out.println("Invalid Password");
-			}
+		Password4 myLamda = () -> {
+		
+		String Regex = "^[a-zA-Z0-9@#.$%^&+=_-]{8,25}$";
+		System.out.println("Enter your Password:");
+		String password = scn.next();
+		Pattern pt =Pattern.compile(Regex);
+		if (Pattern.matches(Regex, password)) {
+		System.out.println("valid password");
+		} else {
+		System.out.println("Invalid password");
+		}
 		};
-		myLamda.validate_pass();
-	}
-}
+		myLamda.validate_Pass();
+		}
+        }
