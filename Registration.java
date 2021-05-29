@@ -1,32 +1,32 @@
 package com.registration;
 
 import java.util.Scanner;
-
 import java.util.regex.Pattern;
 
 @FunctionalInterface
-interface MobileNum {
-public abstract void valid_Mobile();	
+interface Password {
+
+public abstract void validate_Pass();
 }
 
-public class RegistrationUC4 {
+public class RegistrationUC5 {
 
 public static void main(String[] args) {
 		
 		Scanner scn = new Scanner(System.in);
-		MobileNum myLamda = () -> {
+		Password myLamda = () -> {
 		
-		String Regex = "^[91]{2}\s{0,1}[789]{1}[0-9]{9}$";
-		System.out.println("Enter a Mobile Number:");
-		String Mob = scn.next();
+		String Regex = "^[a-zA-Z]{8,25}$";
+		System.out.println("Enter your Password:");
+		String password = scn.next();
 		Pattern pt =Pattern.compile(Regex);
-		if (Pattern.matches(Regex, Mob)) {
-		System.out.println(" Mobile Number is Valid");
+		if (Pattern.matches(Regex, password)) {
+		System.out.println("valid password");
 		} else {
-		System.out.println("Mobile Number is  InValid");
+		System.out.println("Invalid password");
 		}
 		};
-		myLamda.valid_Mobile();
+		myLamda.validate_Pass();
 		}
 		}
 
