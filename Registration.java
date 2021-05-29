@@ -4,17 +4,14 @@ import java.util.Scanner;
 import java.util.regex.Pattern;
 
 @FunctionalInterface
-interface Password {
-
-public abstract void validate_Pass();
+interface Password1 {
+public abstract void validate_pass();
 }
-
-public class RegistrationUC5 {
-
+public class RegistrationUC6 {
 public static void main(String[] args) {
 		
 		Scanner scn = new Scanner(System.in);
-		Password myLamda = () -> {
+		Password1 myLamda = () -> {
 		
 		String Regex = "^[a-zA-Z]{8,25}$";
 		System.out.println("Enter your Password:");
@@ -26,7 +23,7 @@ public static void main(String[] args) {
 		System.out.println("Invalid password");
 		}
 		};
-		myLamda.validate_Pass();
+		myLamda.validate_pass();
 		}
 		}
 
